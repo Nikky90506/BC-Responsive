@@ -69,7 +69,9 @@ export function activityMessage(dict: ActivityInfo, entry: ResponsesEntryModel |
     return sendAction(templatedResponse.slice(1));
   }
 
-  chatRoomAutoInterceptMessage(ElementValue("InputChat"), templatedResponse, source);
+  const finalMessage = response + moanDependingOnActivity(Player, entry?.responses, dict.activityName);
+
+  chatRoomAutoInterceptMessage(ElementValue("InputChat"), finalMessage, source);
 }
 
 export function sendAction(action: string) {
