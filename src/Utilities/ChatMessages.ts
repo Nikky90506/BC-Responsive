@@ -70,7 +70,7 @@ export function activityMessage(dict: ActivityInfo, entry: ResponsesEntryModel |
     return sendAction(templatedResponse.slice(1));
   }
 
-  chatRoomAutoInterceptMessage(ElementValue("InputChat"), finalMessage, source);
+  chatRoomAutoInterceptMessage(ElementValue("InputChat"), templatedResponse, source);
 }
 
 export function sendAction(action: string) {
