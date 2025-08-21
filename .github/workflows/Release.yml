@@ -5,7 +5,7 @@ permissions:
   id-token: write
 on:
   push:
-    branches: [main]
+    branches: [**]
   workflow_dispatch:
 
 jobs:
