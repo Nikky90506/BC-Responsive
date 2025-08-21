@@ -155,7 +155,7 @@ function typedResponse(responses: string[]) {
   return randomResponse(responses);
 }
 
-/* function moanDependingOnActivity(C: Character, responses: string[] | undefined, act: string | undefined) {
+function moanDependingOnActivity(C: Character, responses: string[] | undefined, act: string | undefined) {
   if (!C?.ArousalSettings) return;
   if (!responses) return;
 
@@ -177,4 +177,4 @@ function typedResponse(responses: string[]) {
       return "♥" + baseMoan(arousal) + "♥";
     }
   }
-} */
+}
