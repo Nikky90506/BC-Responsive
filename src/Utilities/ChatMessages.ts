@@ -55,7 +55,8 @@ export function leaveMessage() {
 
 export function activityMessage(dict: ActivityInfo, entry: ResponsesEntryModel | undefined) {
   const source = getCharacter(dict.sourceCharacter.MemberNumber);
-  const response = typedResponse(entry?.responses);
+  let response = typedResponse(entry?.responses);
+  response += moanDependingOnActivity(Player, entry?.responses, dict.activityName);
   const templatedResponse = replaceTemplate(response, source).trim();
 
   if (templatedResponse[0] == "@") {
@@ -68,8 +69,6 @@ export function activityMessage(dict: ActivityInfo, entry: ResponsesEntryModel |
 
     return sendAction(templatedResponse.slice(1));
   }
-
-  const finalMessage = response + moanDependingOnActivity(Player, entry?.responses, dict.activityName);
 
   chatRoomAutoInterceptMessage(ElementValue("InputChat"), finalMessage, source);
 }
@@ -164,8 +163,9 @@ function moanDependingOnActivity(C: Character, responses: string[] | undefined, 
   const doAddMoans = PlayerStorage().GlobalModule.doAddMoansOnHighArousal;
   if (!doAddMoans) return "";
 
-  let actFactor = C.ArousalSettings.Activity.find((_) => _.Name === act)?.Self;
-  if (!actFactor) return "";
+  // let actFactor = C.ArousalSettings.Activity.find((_) => _.Name === act)?.Self;
+  // if (!actFactor) return "";
+  let actFactor = 4;
 
   let threthold1 = Math.max(10, (4 - actFactor) * 25);
   let threthold2 = threthold1 + 40;
