@@ -21,7 +21,7 @@
 (function () {
   'use strict';
   const ending = 'main.js';
-  const prodPath = 'https://ddeeplb.github.io/BC-Responsive/';
+  const prodPath = 'https://Nikky90506.github.io/BC-Responsive/';
   const devPath = `${prodPath}dev/`;
   const localPath = 'http://localhost:1000/';
 

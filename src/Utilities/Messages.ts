@@ -9,7 +9,7 @@ export const BCR_CMDS = /*html*/ `
     <br><a class="ResponsiveText" onClick='window.CommandSet("${CMD_CHANGELOG}")'>Show Changelog</a>
     <br><a class="ResponsiveText" onClick='window.CommandSet("${CMD_VERSION}")'>Show Version</a><br>
     <br><a class="ResponsiveText" onClick='window.CommandSet("${CMD_DEBUG_DATA}")'>Debug Data</a><br>
-    <br><a href='https://github.com/dDeepLb/BC-Responsive/wiki' target='_blank'><b>Open Wiki</b></a>
+    <br><a href='https://github.com/Nikky90506/BC-Responsive/wiki' target='_blank'><b>Open Wiki</b></a>
   </div>
   `;
 
@@ -48,7 +48,7 @@ export const BCR_CHANGELOG = /*html*/ `
     <br>• Removed feature to add moans on high arousal.<br>
   </div>
 
-  <br><a href='https://github.com/dDeepLb/BC-Responsive/wiki/Full-Changelog' target='_blank'><b>Full Changelog (Click)</b></a>
+  <br><a href='https://github.com/Nikky90506/BC-Responsive/wiki/Full-Changelog' target='_blank'><b>Full Changelog (Click)</b></a>
   `;
 
 export function sendLocalSmart(id: string, message: string, timeoutInSeconds?: number) {
