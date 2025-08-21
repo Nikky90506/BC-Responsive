@@ -1,22 +1,13 @@
-name: Release
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+name: Hello World
+
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [main]   # run when pushing to main
+  workflow_dispatch:   # allow manual runs
 
 jobs:
-  build:
+  say-hello:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20]
-    env:
-      environment: production
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - name: Print greeting
+        run: echo "Hello, world! 👋"
