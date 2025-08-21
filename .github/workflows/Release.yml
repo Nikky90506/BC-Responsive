@@ -5,7 +5,7 @@ permissions:
   id-token: write
 on:
   push:
-    branches: ['**']
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -35,9 +35,3 @@ jobs:
       - name: Build project
         run: pnpm run build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.6.3
-        with:
-          branch: gh-pages
-          folder: dist
-          clean-exclude: dev
