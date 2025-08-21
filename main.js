@@ -305,7 +305,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
   var CMD_DEBUG_DATA = `${cmdKeyword} debug-data`;
   var ModName = `Responsive`;
   var FullModName = `Bondage Club Responsive`;
-  var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"2410b135"}` : "0.6.6";
+  var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"4f8ebb8f"}` : "0.6.6";
   var ModRepository = `https://github.com/Nikky90506/BC-Responsive`;
   var DebugMode = false;
 
@@ -1066,7 +1066,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
       }
       return sendAction(templatedResponse.slice(1));
     }
-    chatRoomAutoInterceptMessage(ElementValue("InputChat"), finalMessage, source);
+    chatRoomAutoInterceptMessage(ElementValue("InputChat"), templatedResponse, source);
   }
   __name(activityMessage, "activityMessage");
   function sendAction(action) {
