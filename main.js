@@ -305,7 +305,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
   var CMD_DEBUG_DATA = `${cmdKeyword} debug-data`;
   var ModName = `Responsive`;
   var FullModName = `Bondage Club Responsive`;
-  var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"bdd68c84"}` : "0.6.6";
+  var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"ffeca541"}` : "0.6.6";
   var ModRepository = `https://github.com/Nikky90506/BC-Responsive`;
   var DebugMode = false;
 
@@ -1371,6 +1371,13 @@ One of mods you are using is using an old version of SDK. It will work for now b
         },
         {
           type: "checkbox",
+          label: "settings.setting.doAddMoansOnHighArousal.name",
+          description: "settings.setting.doAddMoansOnHighArousal.desc",
+          setting: /* @__PURE__ */ __name(() => this.settings?.doAddMoansOnHighArousal ?? true, "setting"),
+          setSetting: /* @__PURE__ */ __name((val) => this.settings.doAddMoansOnHighArousal = val, "setSetting")
+        },
+        {
+          type: "checkbox",
           label: "settings.setting.doPreventMessageIfBcxBlock.name",
           description: "settings.setting.doPreventMessageIfBcxBlock.desc",
           setting: /* @__PURE__ */ __name(() => this.settings?.doPreventMessageIfBcxBlock ?? false, "setting"),
@@ -1407,7 +1414,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
         CharTalkEnabled: true,
         doShowNewVersionMessage: true,
         doLeaveMessage: true,
-        //doAddMoansOnHighArousal: true,
+        doAddMoansOnHighArousal: true,
         doPreventMessageIfBcxBlock: false,
         doMessageInterruption: true
       };
