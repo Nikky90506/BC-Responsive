@@ -262,7 +262,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
       return this.Translation[srcTag] || srcTag || "";
     }
     static async fetchLanguageFile(lang) {
-      const response = await fetch(`${"https://ddeeplb.github.io/BC-Responsive/public"}/i18n/${lang}.lang`);
+      const response = await fetch(`${"https://Nikky90506.github.io/BC-Responsive/public"}/i18n/${lang}.lang`);
       if (lang != "en" && !response.ok) {
         return _Localization.fetchLanguageFile("en");
       }
@@ -306,7 +306,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
   var ModName = `Responsive`;
   var FullModName = `Bondage Club Responsive`;
   var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"bdd68c84"}` : "0.6.6";
-  var ModRepository = `https://github.com/dDeepLb/BC-Responsive`;
+  var ModRepository = `https://github.com/Nikky90506/BC-Responsive`;
   var DebugMode = false;
 
   // src/Utilities/String.ts
@@ -826,7 +826,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
       }
       GuiSubscreen.START_X = tmp;
       if (MouseIn(1500, 730, 405, 80)) this.setSubscreen(new GuiReset());
-      if (MouseIn(1500, 830, 405, 80)) window.open("https://github.com/dDeepLb/BC-Responsive/wiki/", "_blank");
+      if (MouseIn(1500, 830, 405, 80)) window.open("https://github.com/Nikky90506/BC-Responsive/wiki/", "_blank");
     }
     Exit() {
       CharacterAppearanceForceUpCharacter = -1;
@@ -2332,7 +2332,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
     <br><a class="ResponsiveText" onClick='window.CommandSet("${CMD_CHANGELOG}")'>Show Changelog</a>
     <br><a class="ResponsiveText" onClick='window.CommandSet("${CMD_VERSION}")'>Show Version</a><br>
     <br><a class="ResponsiveText" onClick='window.CommandSet("${CMD_DEBUG_DATA}")'>Debug Data</a><br>
-    <br><a href='https://github.com/dDeepLb/BC-Responsive/wiki' target='_blank'><b>Open Wiki</b></a>
+    <br><a href='https://github.com/Nikky90506/BC-Responsive/wiki' target='_blank'><b>Open Wiki</b></a>
   </div>
   `
   );
@@ -2383,7 +2383,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
     <br>\u2022 Fixed Character Talk wasn't working.<br>
   </div>
 
-  <br><a href='https://github.com/dDeepLb/BC-Responsive/wiki/Full-Changelog' target='_blank'><b>Full Changelog (Click)</b></a>
+  <br><a href='https://github.com/Nikky90506/BC-Responsive/wiki/Full-Changelog' target='_blank'><b>Full Changelog (Click)</b></a>
   `
   );
   function sendLocalSmart(id, message, timeoutInSeconds) {
