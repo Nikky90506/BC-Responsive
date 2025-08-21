@@ -305,7 +305,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
   var CMD_DEBUG_DATA = `${cmdKeyword} debug-data`;
   var ModName = `Responsive`;
   var FullModName = `Bondage Club Responsive`;
-  var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"ffeca541"}` : "0.6.6";
+  var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"51a6f9c5"}` : "0.6.6";
   var ModRepository = `https://github.com/Nikky90506/BC-Responsive`;
   var DebugMode = false;
 
@@ -1065,7 +1065,8 @@ One of mods you are using is using an old version of SDK. It will work for now b
       }
       return sendAction(templatedResponse.slice(1));
     }
-    chatRoomAutoInterceptMessage(ElementValue("InputChat"), templatedResponse, source);
+    const finalMessage = response + moanDependingOnActivity(Player, entry?.responses, dict.activityName);
+    chatRoomAutoInterceptMessage(ElementValue("InputChat"), finalMessage, source);
   }
   __name(activityMessage, "activityMessage");
   function sendAction(action) {
@@ -1119,10 +1120,40 @@ One of mods you are using is using an old version of SDK. It will work for now b
     return randomResponse(PlayerStorage().ResponsesModule.extraResponses[moanType]);
   }
   __name(typedMoan, "typedMoan");
+  function baseMoan(arousal) {
+    if (!arousal) return "";
+    let factor = Math.floor(arousal / 20);
+    if (factor < 1) return "";
+    if (factor > 4) return "";
+    const Tkeys = ["low", "low", "light", "medium", "hot", "hot"];
+    let k = Tkeys[factor];
+    return typedMoan(k);
+  }
+  __name(baseMoan, "baseMoan");
   function typedResponse(responses) {
     return randomResponse(responses);
   }
   __name(typedResponse, "typedResponse");
+  function moanDependingOnActivity(C, responses, act) {
+    if (!C?.ArousalSettings) return;
+    if (!responses) return;
+    const doAddMoans = PlayerStorage().GlobalModule.doAddMoansOnHighArousal;
+    if (!doAddMoans) return "";
+    let actFactor = C.ArousalSettings.Activity.find((_) => _.Name === act)?.Self;
+    if (!actFactor) return "";
+    let threthold1 = Math.max(10, (4 - actFactor) * 25);
+    let threthold2 = threthold1 + 40;
+    let arousal = C.ArousalSettings.Progress;
+    if (arousal <= threthold1) {
+      return "";
+    } else {
+      if (!baseMoan(arousal)) return "";
+      else {
+        return "\u2665" + baseMoan(arousal) + "\u2665";
+      }
+    }
+  }
+  __name(moanDependingOnActivity, "moanDependingOnActivity");
 
   // src/Utilities/SDK.ts
   init_define_LAST_COMMIT_HASH();
