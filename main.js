@@ -305,7 +305,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
   var CMD_DEBUG_DATA = `${cmdKeyword} debug-data`;
   var ModName = `Responsive`;
   var FullModName = `Bondage Club Responsive`;
-  var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"51a6f9c5"}` : "0.6.6";
+  var MOD_VERSION_CAPTION = false ? `${"0.6.6"} - ${"2410b135"}` : "0.6.6";
   var ModRepository = `https://github.com/Nikky90506/BC-Responsive`;
   var DebugMode = false;
 
@@ -1055,7 +1055,8 @@ One of mods you are using is using an old version of SDK. It will work for now b
   __name(leaveMessage, "leaveMessage");
   function activityMessage(dict, entry) {
     const source = getCharacter(dict.sourceCharacter.MemberNumber);
-    const response = typedResponse(entry?.responses);
+    let response = typedResponse(entry?.responses);
+    response += moanDependingOnActivity(Player, entry?.responses, dict.activityName);
     const templatedResponse = replaceTemplate(response, source).trim();
     if (templatedResponse[0] == "@") {
       if (templatedResponse[1] == "@") {
@@ -1065,7 +1066,6 @@ One of mods you are using is using an old version of SDK. It will work for now b
       }
       return sendAction(templatedResponse.slice(1));
     }
-    const finalMessage = response + moanDependingOnActivity(Player, entry?.responses, dict.activityName);
     chatRoomAutoInterceptMessage(ElementValue("InputChat"), finalMessage, source);
   }
   __name(activityMessage, "activityMessage");
@@ -1139,8 +1139,7 @@ One of mods you are using is using an old version of SDK. It will work for now b
     if (!responses) return;
     const doAddMoans = PlayerStorage().GlobalModule.doAddMoansOnHighArousal;
     if (!doAddMoans) return "";
-    let actFactor = C.ArousalSettings.Activity.find((_) => _.Name === act)?.Self;
-    if (!actFactor) return "";
+    let actFactor = 4;
     let threthold1 = Math.max(10, (4 - actFactor) * 25);
     let threthold2 = threthold1 + 40;
     let arousal = C.ArousalSettings.Progress;
