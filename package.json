@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dDeepLb/BC-Responsive.git"
+    "url": "git+https://github.com/Nikky90506/BC-Responsive.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dDeepLb/BC-Responsive/issues"
+    "url": "https://github.com/Nikky90506/BC-Responsive/issues"
   },
-  "homepage": "https://github.com/dDeepLb/BC-Responsive#readme",
+  "homepage": "https://github.com/Nikky90506/BC-Responsive#readme",
   "dependencies": {
     "bondage-club-mod-sdk": "^1.2.0"
   },

@@ -15,6 +15,6 @@ export const CMD_DEBUG_DATA = `${cmdKeyword} debug-data`;
 export const ModName = `Responsive`;
 export const FullModName = `Bondage Club Responsive`; //¯\_(⌣̯̀ ⌣́)_/¯
 export const MOD_VERSION_CAPTION = IS_DEVEL ? `${MOD_VERSION} - ${VERSION_HASH}` : MOD_VERSION;
-export const ModRepository = `https://github.com/dDeepLb/BC-Responsive`;
+export const ModRepository = `https://github.com/Nikky90506/BC-Responsive`;
 
 export const DebugMode = false;

@@ -97,7 +97,7 @@ export class MainMenu extends GuiSubscreen {
     GuiSubscreen.START_X = tmp;
 
     if (MouseIn(1500, 730, 405, 80)) this.setSubscreen(new GuiReset());
-    if (MouseIn(1500, 830, 405, 80)) window.open('https://github.com/dDeepLb/BC-Responsive/wiki/', '_blank');
+    if (MouseIn(1500, 830, 405, 80)) window.open('https://github.com/Nikky90506/BC-Responsive/wiki/', '_blank');
   }
 
   Exit(): void {
